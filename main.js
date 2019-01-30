@@ -1,5 +1,5 @@
 var products = [];
-var temp = [];
+//var temp = [];
 var keepsubt = [];
 
 function loadProducts() {
@@ -76,6 +76,7 @@ function updateSubt(i){
     return keepsubt;
 }
 
+//button.addEventListener('click', removeCartItem)
 function displayCart(){
     $('#continueModal').modal(focus);
     var i = 0;
