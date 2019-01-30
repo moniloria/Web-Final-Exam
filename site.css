@@ -88,4 +88,42 @@
     text-align: center;
   }
 
+  .cart-display-quantity {
+    padding-top: 25px;
+    margin-left: 60px;
+  }
 
+  .cart-display-description {
+    padding-top: 25px;
+    margin-left: 40px;
+    width: 115px;
+    text-align: center;
+  }
+
+  .cart-display-subtotal {
+    padding-top: 25px;
+    margin-left: 40px;
+    width: 80px;
+    text-align: center;
+    font-size: 16px;
+    color: #43484D;
+    font-weight: 300;
+  }
+
+  .cart-display-total {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 480px;
+    text-align: right;
+    font-size: 16px;
+    color: #43484D;
+    font-weight: 300;
+  }
+
+  .cart-display-item {
+    padding: 12px 50px;
+    height: 120px;
+    display: flex;
+    text-align: center;
+    border-bottom:  1px solid #E1E8EE;
+  }

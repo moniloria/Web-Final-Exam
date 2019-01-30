@@ -44,7 +44,6 @@ function loadProducts() {
     }
     var continue2 = document.createElement("div");
     continue2.classList.add("continue"); 
-    //continue2.innerHTML ='<button class="continue" type="button" name="button" data-toggle="modal" data-target="#continueModal" onclick="displayCart()">Continue</button>';
     continue2.innerHTML =`<button class="continue" type="button" name="button" onclick="displayCart(${i})">Continue</button>`;
     textTable.appendChild(continue2); 
 }
@@ -86,29 +85,41 @@ function displayCart(){
         if (subtotal !=0){
             let continueShopping = document.getElementById("continueShopping");
             var item = document.createElement("div"); // create div
-            item.classList.add("item"); // class description
+            item.classList.add("cart-display-item"); // class description
             continueShopping.appendChild(item); // append the item to the cart
 
             var quantity = document.createElement("div");
-            quantity.classList.add("description");
+            quantity.classList.add("cart-display-quantity");
             quantity.innerText = quant;
             item.appendChild(quantity); 
 
             var description = document.createElement("div"); // create div
-            description.classList.add("description"); // class description
+            description.classList.add("cart-display-description"); // class description
             description.innerText = products[i].name; // add text to the column, the product's name
             item.appendChild(description); // append the item to the cart
 
-            var subtotal = document.createElement("div");
-            subtotal.classList.add("total-price");
-            subtotal.innerText = subtotal;
-            item.appendChild(subtotal);
+            var subtotal1 = document.createElement("div");
+            subtotal1.classList.add("cart-display-subtotal");
+            subtotal1.innerText = "$"+subtotal;
+            item.appendChild(subtotal1);
         }
         i = i+1;
     }
+    var totalAmount = 0;
+    var x = 0;
+    while (x < keepsubt.length){
+        totalAmount += keepsubt[x];
+        x +=1;
+    }
+    
+    let continueShopping = document.getElementById("continueShopping");
+    var total = document.createElement("div");
+    total.classList.add("cart-display-total");
+    total.innerText =  "Total = $"+totalAmount.toFixed(2);
+    continueShopping.appendChild(total);
 }
 
-function clear(){
+function borrar(){
     let continueShopping = document.getElementById("continueShopping");
     
     while (continueShopping.hasChildNodes()) {
@@ -128,4 +139,5 @@ function purchase(){
     updateSubt(2);
     updateSubt(3);
     updateSubt(4);
+    borrar();
 }
